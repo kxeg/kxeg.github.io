@@ -420,16 +420,23 @@
 <p>相对与<strong>len</strong>()，内置函数len()也起到了简化书写的作用。</p>
 <p>###3、表（list）元素引用</p>
 <p>下面是我们常见的表元素引用方式：</p>
-<p>li = [1, 2, 3, 4, 5, 6]<br>print(li[3])</p>
-<p>上面的程序运行到li[3]的时候，Python发现并理解[]符号，然后调用<strong>getitem</strong>()方法。</p>
-<p>li = [1, 2, 3, 4, 5, 6]<br>print(li.<strong>getitem</strong>(3))</p>
-<p>###4、函数</p>
+<pre><code>li = [1, 2, 3, 4, 5, 6]
+print(li[3])
+</code></pre><p>上面的程序运行到li[3]的时候，Python发现并理解[]符号，然后调用<strong>getitem</strong>()方法。</p>
+<pre><code>li = [1, 2, 3, 4, 5, 6]
+print(li.__getitem__(3))
+</code></pre><p>###4、函数</p>
 <p>我们已经说过，在Python中，函数也是一种对象。实际上，任何一个有<strong>call</strong>()特殊方法的对象都被当作是函数。比如下面的例子:</p>
-<p>class SampleMore(object):<br>    def <strong>call</strong>(self, a):<br>        return a + 5</p>
-<p>add = SampleMore()     # A function object<br>print(add(2))          # Call function<br>map(add, [2, 4, 5])    # Pass around function object</p>
-<p>add为SampleMore类的一个对象，当被调用时，add执行加5的操作。add还可以作为函数对象，被传递给map()函数。</p>
-<p>当然，我们还可以使用更“优美”的方式，想想是什么。</p>
+<pre><code>class SampleMore(object):
+    def __call__(self, a):
+        return a + 5
 
+add = SampleMore()     # A function object
+print(add(2))          # Call function    
+map(add, [2, 4, 5])    # Pass around function object
+</code></pre><p>add为SampleMore类的一个对象，当被调用时，add执行加5的操作。add还可以作为函数对象，被传递给map()函数。</p>
+<p>当然，我们还可以使用更“优美”的方式，想想是什么。</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" auto="0" src="http://music.163.com/outchain/player?type=2&id=405242079&auto=1&height=66"></iframe>
           
         
       
