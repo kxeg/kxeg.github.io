@@ -166,7 +166,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/首页" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -221,6 +221,121 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/12/匿名函数/" itemprop="url">
+                  匿名函数
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-12T22:07:00+08:00" content="2016-08-12">
+              2016-08-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>所谓的匿名函数，就是不需要显式的定义函数，有的时候，使用匿名函数更加方便。<br>在python中，关键字lambda表示匿名函数，以map（）函数举个例子，计算f(x)=x3时，可以这样子</p>
+<pre><code>&gt;&gt;&gt; list(map(lambda x: x**3,range(1,5)))
+[1, 8, 27, 64]
+</code></pre><p>实际上，lambda x: x**3就等同于</p>
+<pre><code>def f(x):
+    return x * * 3
+</code></pre><p>匿名函数有个限制，就是只能有一个表达式，不用写return，返回值就是该表达式的结果。<br>用匿名函数有个好处，因为函数没有名字，不必担心函数名冲突。此外，匿名函数也是一个函数对象，也可以把匿名函数赋值给一个变量，再利用变量来调用该函数</p>
+<pre><code>&gt;&gt;&gt; f = lambda x,y:x+y
+&gt;&gt;&gt; f
+&lt;function &lt;lambda&gt; at 0x000001E7B4637F28&gt;
+&gt;&gt;&gt; f(5,5)
+10
+</code></pre><p>匿名函数作为返回值返回，比如：</p>
+<pre><code>def sum(x,y):
+    return lambda : x + y
+</code></pre><p>需要提醒一下的是，这里的匿名函数作为返回值返回相当于</p>
+<pre><code>def sum(x,y):
+    def g():
+        return x + y
+    return g
+</code></pre><p>如果你直接使用sum(1,2），那么它返回的将是g函数，所以你必须使用f = sum(1,2),然后f()才能输出3这个数字哦。</p>
+<p></p><h2 style="font-family:华文仿宋;color:red">Python对匿名函数的支持有限，只有一些简单的情况下可以使用匿名函数</h2><p></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=405242079&auto=1&height=66"></iframe>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -383,7 +498,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/归档">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
